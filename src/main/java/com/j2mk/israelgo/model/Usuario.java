@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @author jkelsy
+ * @author jdmp
  */
 @Entity
 @Table(name = "sec_usuario")

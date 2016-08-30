@@ -24,6 +24,27 @@
     <class>com.j2mk.israelgo.model.Archivo</class>
     <class>com.j2mk.israelgo.model.TipoArchivo</class>
     <class>com.j2mk.israelgo.model.DetalleArchivoCentral</class>
+    <class>com.j2mk.israel.model.Departamento</class>
+    <class>com.j2mk.israel.model.Usuario</class>
+    <class>com.j2mk.israel.model.Poblado</class>
+    <class>com.j2mk.israel.model.Permiso</class>
+    <class>com.j2mk.israel.model.Tercero</class>
+    <class>com.j2mk.israel.model.Empresa</class>
+    <class>com.j2mk.israel.model.Municipio</class>
+    <class>com.j2mk.israel.model.Rol</class>
+    <class>com.j2mk.israel.model.TipoIdentificacion</class>
+    <class>com.j2mk.israel.model.EstadoInmueble</class>
+    <class>com.j2mk.israel.model.Inmueble</class>
+    <class>com.j2mk.israel.model.Proyecto</class>
+    <class>com.j2mk.israel.model.PlanPago</class>
+    <class>com.j2mk.israel.model.Oferta</class>
+    <class>com.j2mk.israel.model.Negociacion</class>
+    <class>com.j2mk.israelgo.model.EstadoInmueble</class>
+    <class>com.j2mk.israelgo.model.Inmueble</class>
+    <class>com.j2mk.israelgo.model.Proyecto</class>
+    <class>com.j2mk.israelgo.model.PlanPago</class>
+    <class>com.j2mk.israelgo.model.Oferta</class>
+    <class>com.j2mk.israelgo.model.Negociacion</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.hbm2ddl.auto" value="update"/>

@@ -5,29 +5,18 @@
  */
 package com.j2mk.israelgo.controller;
 
-import com.j2mk.israelgo.business.CargoFacade;
-import com.j2mk.israelgo.business.CentroCostoFacade;
-import com.j2mk.israelgo.business.DepartamentoFacade;
-import com.j2mk.israelgo.business.EmpresaFacade;
-import com.j2mk.israelgo.business.MunicipioFacade;
-import com.j2mk.israelgo.business.PobladoFacade;
-import com.j2mk.israelgo.business.TerceroFacade;
-import com.j2mk.israelgo.model.Cargo;
-import com.j2mk.israelgo.model.CentroCosto;
 import com.j2mk.israelgo.model.Departamento;
 import com.j2mk.israelgo.model.Empresa;
 import com.j2mk.israelgo.model.Municipio;
 import com.j2mk.israelgo.model.Poblado;
 import com.j2mk.israelgo.model.Tercero;
+import com.j2mk.israelgo.business.DepartamentoFacade;
+import com.j2mk.israelgo.business.EmpresaFacade;
+import com.j2mk.israelgo.business.MunicipioFacade;
+import com.j2mk.israelgo.business.PobladoFacade;
+import com.j2mk.israelgo.business.TerceroFacade;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.Serializable;
-import java.net.URL;
-import java.net.URLDecoder;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
@@ -53,13 +42,7 @@ public class EmpresaController implements Serializable {
 
     @Inject
     private PobladoFacade pobladoFacade;
-
-    @Inject
-    private CargoFacade cargoFacade;
-
-    @Inject
-    private CentroCostoFacade centroCostoFacade;
-
+    
     private Empresa seleccionado = new Empresa();
 
     private Long representanteId;
@@ -80,15 +63,7 @@ public class EmpresaController implements Serializable {
 
     private List<Poblado> pobladoList;
 
-    private List<Cargo> cargoList;
-
-    private List<CentroCosto> centroCostoList;
-
     private List<Tercero> jefeList;
-
-    private Cargo cargoInstance;
-
-    private CentroCosto centroCostoInstance;
 
     private String accion;
 
@@ -173,21 +148,6 @@ public class EmpresaController implements Serializable {
         this.pobladoId = pobladoId;
     }
 
-    public List<Cargo> getCargoList() {
-        return cargoList;
-    }
-
-    public void setCargoList(List<Cargo> cargoList) {
-        this.cargoList = cargoList;
-    }
-
-    public Cargo getCargoInstance() {
-        return cargoInstance;
-    }
-
-    public void setCargoInstance(Cargo cargoInstance) {
-        this.cargoInstance = cargoInstance;
-    }
 
     public String getAccion() {
         return accion;
@@ -197,21 +157,6 @@ public class EmpresaController implements Serializable {
         this.accion = accion;
     }
 
-    public CentroCosto getCentroCostoInstance() {
-        return centroCostoInstance;
-    }
-
-    public void setCentroCostoInstance(CentroCosto centroCostoInstance) {
-        this.centroCostoInstance = centroCostoInstance;
-    }
-
-    public List<CentroCosto> getCentroCostoList() {
-        return centroCostoList;
-    }
-
-    public void setCentroCostoList(List<CentroCosto> centroCostoList) {
-        this.centroCostoList = centroCostoList;
-    }
 
     public Long getJefeId() {
         return jefeId;
@@ -341,8 +286,8 @@ public class EmpresaController implements Serializable {
         this.seleccionado = emp;
 
         try {
-            cargoList = empresaFacade.buscarCargos(this.seleccionado.getId());
-            centroCostoList = empresaFacade.buscarCentroCostos(this.seleccionado.getId());
+            //cargoList = empresaFacade.buscarCargos(this.seleccionado.getId());
+            //centroCostoList = empresaFacade.buscarCentroCostos(this.seleccionado.getId());
         } catch (Exception e) {
             throw e;
         }
@@ -351,93 +296,5 @@ public class EmpresaController implements Serializable {
 
     }
 
-    public void registraCargo() throws Exception {
-
-        try {
-            cargoInstance.setEmpresa(seleccionado);
-
-            if (accion.equals("Grabar")) {
-                cargoFacade.create(cargoInstance);
-            } else if (accion.equals("Actualizar")) {
-                cargoFacade.edit(cargoInstance);
-            }
-
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            cargoList = empresaFacade.buscarCargos(seleccionado.getId());
-        }
-
-    }
-
-    public void crearCargo() {
-        this.accion = "Grabar";
-        this.cargoInstance = new Cargo();
-    }
-
-    public void seleccionarCargo(Cargo car) {
-        this.accion = "Actualizar";
-        this.cargoInstance = car;
-    }
-
-    public void eliminarCargo() {
-        try {
-            cargoFacade.remove(cargoInstance);
-            cargoList = empresaFacade.buscarCargos(this.seleccionado.getId());
-
-        } catch (Exception e) {
-
-        } finally {
-
-        }
-    }
-
-    public void crearCentroCosto() {
-        this.accion = "Grabar";
-        this.centroCostoInstance = new CentroCosto();
-        this.jefeList = terceroFacade.findAll();
-    }
-
-    public void seleccionarCentroCosto(CentroCosto centroCosto) {
-        this.accion = "Actualizar";
-        this.centroCostoInstance = centroCosto;
-        if (this.centroCostoInstance.getJefe() != null) {
-            this.jefeId = this.centroCostoInstance.getJefe().getId();
-        }
-        this.jefeList = terceroFacade.findAll();
-    }
-
-    public void registraCentroCosto() throws Exception {
-
-        try {
-            centroCostoInstance.setEmpresa(seleccionado);
-            centroCostoInstance.setJefe(terceroFacade.find(jefeId));
-
-            if (accion.equals("Grabar")) {
-                centroCostoFacade.create(centroCostoInstance);
-            } else if (accion.equals("Actualizar")) {
-                centroCostoFacade.edit(centroCostoInstance);
-            }
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            centroCostoList = empresaFacade.buscarCentroCostos(seleccionado.getId());
-        }
-
-    }
-
-    public void eliminarCentroCosto() {
-
-        try {
-            centroCostoFacade.remove(centroCostoInstance);
-            this.jefeId = null;
-            centroCostoList = empresaFacade.buscarCentroCostos(seleccionado.getId());
-
-        } catch (Exception e) {
-            System.err.println("Error" + e);
-        } finally {
-
-        }
-    }
 
 }

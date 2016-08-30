@@ -15,28 +15,32 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
- * @author jkelsy
+ * @author jdmp
  */
 @Entity
-@Table(name = "cargo")
-public class Cargo implements Serializable {
+@Table(name = "proyecto")
+public class Proyecto implements Serializable {
 
-    @Column(name = "cargo_id", unique = true)
+    @Column(name = "proyecto_id", unique = true)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "cargo_descripcion")
+    @Column(name = "proyecto_nombre", unique = true)
     @Basic
-    private String descripcion;
+    private String nombre;
 
-    @Column(name = "cargo_codigo")
-    @Basic
-    private String codigo;
+    @ManyToOne(targetEntity = PlanPago.class)
+    @JoinColumn(name = "PLANPAGO_ID")
+    private PlanPago planPago;
 
     @ManyToOne(targetEntity = Empresa.class)
     @JoinColumn(name = "EMPRESA_ID")
     private Empresa empresa;
+
+    @ManyToOne(targetEntity = Oferta.class)
+    @JoinColumn(name = "OFERTA_ID")
+    private Oferta oferta;
 
     public Long getId() {
         return this.id;
@@ -46,20 +50,20 @@ public class Cargo implements Serializable {
         this.id = id;
     }
 
-    public String getDescripcion() {
-        return this.descripcion;
+    public String getNombre() {
+        return this.nombre;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getCodigo() {
-        return this.codigo;
+    public PlanPago getPlanPago() {
+        return this.planPago;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setPlanPago(PlanPago planPago) {
+        this.planPago = planPago;
     }
 
     public Empresa getEmpresa() {
@@ -68,6 +72,14 @@ public class Cargo implements Serializable {
 
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
+    }
+
+    public Oferta getOferta() {
+        return this.oferta;
+    }
+
+    public void setOferta(Oferta oferta) {
+        this.oferta = oferta;
     }
 
 }

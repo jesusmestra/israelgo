@@ -29,18 +29,6 @@ public class Empresa implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "emp_radicado_salida")
-    @Basic
-    private String radicadoSalida;
-
-    @Column(name = "emp_logo_fondo_carta")
-    @Basic
-    private String logoFondoCarta;
-
-    @Column(name = "emp_archivo_ruta")
-    @Basic
-    private String archivoRuta;
-
     @Column(name = "emp_direccion")
     @Basic
     private String direccion;
@@ -52,10 +40,6 @@ public class Empresa implements Serializable {
     @Column(name = "emp_email_pass")
     @Basic
     private String emailPass;
-
-    @Column(name = "emp_logo_url")
-    @Basic
-    private String logoUrl;
 
     @Column(name = "emp_nit")
     @Basic
@@ -69,10 +53,6 @@ public class Empresa implements Serializable {
     @Basic
     private String emailHost;
 
-    @Column(name = "emp_radicado_interno")
-    @Basic
-    private String radicadoInterno;
-
     @Column(name = "emp_telefono")
     @Basic
     private String telefono;
@@ -80,10 +60,6 @@ public class Empresa implements Serializable {
     @Column(name = "emp_email_port")
     @Basic
     private String emailPort;
-
-    @Column(name = "emp_radicado_entrada")
-    @Basic
-    private String radicadoEntrada;
 
     @Column(name = "emp_email")
     @Basic
@@ -103,30 +79,6 @@ public class Empresa implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getRadicadoSalida() {
-        return this.radicadoSalida;
-    }
-
-    public void setRadicadoSalida(String radicadoSalida) {
-        this.radicadoSalida = radicadoSalida;
-    }
-
-    public String getLogoFondoCarta() {
-        return this.logoFondoCarta;
-    }
-
-    public void setLogoFondoCarta(String logoFondoCarta) {
-        this.logoFondoCarta = logoFondoCarta;
-    }
-
-    public String getArchivoRuta() {
-        return this.archivoRuta;
-    }
-
-    public void setArchivoRuta(String archivoRuta) {
-        this.archivoRuta = archivoRuta;
     }
 
     public String getDireccion() {
@@ -153,14 +105,6 @@ public class Empresa implements Serializable {
         this.emailPass = emailPass;
     }
 
-    public String getLogoUrl() {
-        return this.logoUrl;
-    }
-
-    public void setLogoUrl(String logoUrl) {
-        this.logoUrl = logoUrl;
-    }
-
     public String getNit() {
         return this.nit;
     }
@@ -185,14 +129,6 @@ public class Empresa implements Serializable {
         this.emailHost = emailHost;
     }
 
-    public String getRadicadoInterno() {
-        return this.radicadoInterno;
-    }
-
-    public void setRadicadoInterno(String radicadoInterno) {
-        this.radicadoInterno = radicadoInterno;
-    }
-
     public String getTelefono() {
         return this.telefono;
     }
@@ -207,14 +143,6 @@ public class Empresa implements Serializable {
 
     public void setEmailPort(String emailPort) {
         this.emailPort = emailPort;
-    }
-
-    public String getRadicadoEntrada() {
-        return this.radicadoEntrada;
-    }
-
-    public void setRadicadoEntrada(String radicadoEntrada) {
-        this.radicadoEntrada = radicadoEntrada;
     }
 
     public String getEmail() {

@@ -10,21 +10,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
- * @author jkelsy
+ * @author jdmp
  */
 @Entity
-public class TipoArchivo implements Serializable {
+@Table(name = "inmueble")
+public class Inmueble implements Serializable {
 
-    @Column(name = "tp_archivo_id", unique = true)
+    @Column(name = "inm_id", unique = true)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "tp_archivo_descripcion", unique = true)
     @Basic
-    private String descripcion;
+    private String numero;
 
     public Long getId() {
         return this.id;
@@ -34,12 +35,12 @@ public class TipoArchivo implements Serializable {
         this.id = id;
     }
 
-    public String getDescripcion() {
-        return this.descripcion;
+    public String getNumero() {
+        return this.numero;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
 }
