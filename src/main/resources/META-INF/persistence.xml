@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="HermesPU" transaction-type="JTA">
-    <jta-data-source>java:/jboss/datasources/HermesDS</jta-data-source>
-    <class>com.sgd.hermes.model.Departamento</class>
-    <class>com.sgd.hermes.model.Usuario</class>
-    <class>com.sgd.hermes.model.Poblado</class>
-    <class>com.sgd.hermes.model.Permiso</class>
-    <class>com.sgd.hermes.model.Tercero</class>
-    <class>com.sgd.hermes.model.Cargo</class>
-    <class>com.sgd.hermes.model.Empresa</class>
-    <class>com.sgd.hermes.model.Municipio</class>
-    <class>com.sgd.hermes.model.Rol</class>
-    <class>com.sgd.hermes.model.CentroCosto</class>
-    <class>com.sgd.hermes.model.TipoIdentificacion</class>
-    <class>com.sgd.hermes.model.TipoPreservacion</class>
-    <class>com.sgd.hermes.model.TipoArmario</class>
-    <class>com.sgd.hermes.model.TablaRetencionDocumental</class>
-    <class>com.sgd.hermes.model.ArchivoCentral</class>
-    <class>com.sgd.hermes.model.Serie</class>
-    <class>com.sgd.hermes.model.SubSerie</class>
-    <class>com.sgd.hermes.model.TipoDocumental</class>
-    <class>com.sgd.hermes.model.TRDTipoDocumental</class>
-    <class>com.sgd.hermes.model.Archivo</class>
-    <class>com.sgd.hermes.model.TipoArchivo</class>
-    <class>com.sgd.hermes.model.DetalleArchivoCentral</class>
+  <persistence-unit name="IsraelGoPU" transaction-type="JTA">
+    <jta-data-source>java:/jboss/datasources/IsraelGoDS</jta-data-source>
+    <class>com.j2mk.israelgo.model.Departamento</class>
+    <class>com.j2mk.israelgo.model.Usuario</class>
+    <class>com.j2mk.israelgo.model.Poblado</class>
+    <class>com.j2mk.israelgo.model.Permiso</class>
+    <class>com.j2mk.israelgo.model.Tercero</class>
+    <class>com.j2mk.israelgo.model.Cargo</class>
+    <class>com.j2mk.israelgo.model.Empresa</class>
+    <class>com.j2mk.israelgo.model.Municipio</class>
+    <class>com.j2mk.israelgo.model.Rol</class>
+    <class>com.j2mk.israelgo.model.CentroCosto</class>
+    <class>com.j2mk.israelgo.model.TipoIdentificacion</class>
+    <class>com.j2mk.israelgo.model.TipoPreservacion</class>
+    <class>com.j2mk.israelgo.model.TipoArmario</class>
+    <class>com.j2mk.israelgo.model.TablaRetencionDocumental</class>
+    <class>com.j2mk.israelgo.model.ArchivoCentral</class>
+    <class>com.j2mk.israelgo.model.Serie</class>
+    <class>com.j2mk.israelgo.model.SubSerie</class>
+    <class>com.j2mk.israelgo.model.TipoDocumental</class>
+    <class>com.j2mk.israelgo.model.TRDTipoDocumental</class>
+    <class>com.j2mk.israelgo.model.Archivo</class>
+    <class>com.j2mk.israelgo.model.TipoArchivo</class>
+    <class>com.j2mk.israelgo.model.DetalleArchivoCentral</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
