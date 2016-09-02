@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="/plantilla.xhtml">
+
+            <ui:define name="content">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">#{proyectoController.seleccionado.nombre}</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt> 
+                                        <p:outputLabel for="txtNombre" value="Nombre"></p:outputLabel>
+                                    </dt>
+                                    <dd>
+                                        <h:outputText id="txtNombre" value="#{proyectoController.seleccionado.nombre}"></h:outputText>
+                                    </dd>
+                                </dl>
+
+                            </div>
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt> 
+                                        <p:outputLabel for="txtOferta" value="Oferta"></p:outputLabel>
+                                    </dt>
+                                    <dd>
+                                        <h:outputText id="txtOferta" value="#{proyectoController.seleccionado.oferta.nombre}"></h:outputText>
+                                    </dd>
+                                </dl>
+
+                            </div>
+                        </div>
+
+                        <h:form id="frmPrincipal">
+
+                            <h4>Inmuebles </h4>
+
+
+
+
+
+                            <p:outputLabel value="Nuevo"/>
+                            <p:commandButton icon="ui-icon-plusthick" value="Nuevo" 
+                                             oncomplete="PF('wDialogoNuevoInmueble').show();"                
+                                             actionListener="#{proyectoController.crearInmueble('Grabar')}"
+                                             update=":frmDialogoNuevoInmueble"/>
+
+                            <p:dataTable id="listaInmuebles" emptyMessage="No hay resultados a mostrar" value="#{proyectoController.getInmuebles(proyectoController.seleccionado) }" var="inm">
+                                <p:column headerText="Numero" filterBy="#{inm.numero}" filterMatchMode="contains">
+                                    <f:facet name="header">
+                                        <h:outputText value="Numero" />
+                                    </f:facet>
+                                    <h:outputText value="#{inm.numero}" />
+                                </p:column>
+                                <p:column headerText="Estado" filterBy="#{inm.estadoInmueble.nombre}" filterMatchMode="contains">
+                                    <f:facet name="header">
+                                        <h:outputText value="Estado" />
+                                    </f:facet>
+                                    <h:outputText value="#{inm.estadoInmueble.nombre}" />
+                                </p:column>
+
+                                <p:column headerText="Editar">
+                                    <p:column headerText="Editar">
+
+                                        <p:commandLink value="Editar" oncomplete="PF('wDialogoNuevoInmueble').show();" actionListener="#{proyectoController.seleccionarInmueble(inm) }"
+                                                       update=":frmDialogoNuevoInmueble :frmDialogoNuevoInmueble:txtEstadoInmueble" />
+                                    </p:column>
+                                </p:column>
+
+                            </p:dataTable>
+
+
+                        </h:form> 
+
+
+                        <p:dialog id="dialogoNuevoInmueble" appendTo="@(body)" widgetVar="wDialogoNuevoInmueble" header="Nuevo Inmueble" modal="true" 
+                                  resizable="false" closeOnEscape="true" draggable="false">
+                            <h:form id="frmDialogoNuevoInmueble">
+                                <h:panelGrid columns="2">
+                                    <p:outputLabel for="txtNumero" value="Numero"/>
+                                    <p:inputText id="txtNumero"  required="true"  
+                                                 value="#{proyectoController.inmuebleInstance.numero}"/>
+
+                                    <p:outputLabel for="txtEstadoInmueble" value="Estado inmueble"/>
+                                    <p:selectOneMenu  id="txtEstadoInmueble" 
+                                                      value="#{proyectoController.estadoInmuebleId}">
+                                        <f:selectItem itemLabel="Seleccione" itemValue="" noSelectionOption="true"/>
+                                        <f:selectItems  value="#{proyectoController.estadoInmuebleList}" var="est"
+                                                        itemLabel="#{est.nombre}" itemValue="#{est.id}"/>
+                                    </p:selectOneMenu>
+
+                                    <p:commandButton value="#{proyectoController.accion}" icon="ui-icon-check" update=":frmPrincipal:listaInmuebles" 
+                                                     actionListener="#{proyectoController.registraInmueble()}" 
+                                                     oncomplete="PF('wDialogoNuevoInmueble').hide();" 
+                                                     rendered="#{proyectoController.accion == 'Grabar'}"
+                                                     />
+
+
+
+                                    <p:commandButton value="#{proyectoController.accion}" icon="ui-icon-refresh" update=":frmPrincipal:listaInmuebles" 
+                                                     actionListener="#{proyectoController.registraInmueble()}" oncomplete="PF('wDialogoNuevoInmueble').hide();" 
+                                                     rendered="#{proyectoController.accion == 'Actualizar'}"
+                                                     />
+
+                                    <p:commandButton value="Cancelar" icon="ui-icon-close" oncomplete="PF('wDialogoNuevoInmueble').hide();"/>
+
+
+                                </h:panelGrid>
+                            </h:form>
+
+                        </p:dialog>
+
+
+
+                    </div>
+                </div>
+
+
+
+            </ui:define>
+        </ui:composition>     
+    </body>
+</html>
