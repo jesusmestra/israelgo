@@ -240,7 +240,9 @@ public class ProyectoController implements Serializable {
     public void seleccionarInmueble(Inmueble inm) {
         this.accion = "Actualizar";
         this.inmuebleInstance = inm;
-        this.setEstadoInmuebleId(inmuebleInstance.getEstadoInmueble().getId());
+        if (inmuebleInstance.getEstadoInmueble()!=null){
+            this.setEstadoInmuebleId(inmuebleInstance.getEstadoInmueble().getId());
+        }
     }
 
 }
