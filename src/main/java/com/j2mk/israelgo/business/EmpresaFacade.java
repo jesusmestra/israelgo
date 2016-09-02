@@ -6,6 +6,7 @@
 package com.j2mk.israelgo.business;
 
 import com.j2mk.israelgo.model.Empresa;
+import com.j2mk.israelgo.model.Proyecto;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -40,6 +41,20 @@ public class EmpresaFacade extends AbstractFacade<Empresa> {
         return lista.get(0);
     }
     
+    public List<Proyecto> buscarProyectos(Long empId) throws Exception{
+        List<Proyecto> proyectoList = null;
+        
+        try {
+            String jpql = " FROM Proyecto p WHERE p.empresa.id = ?1";
+            Query query = em.createQuery(jpql);
+            query.setParameter(1, empId);
+            proyectoList = query.getResultList();
+        } catch (Exception e) {
+             System.err.println("ERRROROROORO"+e.getMessage());
+            throw e;
+        }
+        return proyectoList;
+    }
   
     
 }

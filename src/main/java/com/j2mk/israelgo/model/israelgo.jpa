@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="com.j2mk.israelgo.model" v="2.1" persistenceUnitName="IsraelGoPU" sm="false" xs="false" id="_1470328576751241" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
-    <jpa:entity xre="false" compositePrimaryKeyClass="DepartamentoPK" abs="false" class="Departamento" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1470328576758242">
+    <jpa:entity xre="false" compositePrimaryKeyClass="DepartamentoPK" abs="false" class="Departamento" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1470328576758242">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -24,7 +24,7 @@
         </jpa:nq>
         <jpa:table name="departamento"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="UsuarioPK" abs="false" class="Usuario" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1470328576765246">
+    <jpa:entity xre="false" compositePrimaryKeyClass="UsuarioPK" abs="false" class="Usuario" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1470328576765246">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -45,7 +45,7 @@
         </jpa:attributes>
         <jpa:table name="sec_usuario"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="PobladoPK" abs="false" class="Poblado" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1470328576771250">
+    <jpa:entity xre="false" compositePrimaryKeyClass="PobladoPK" abs="false" class="Poblado" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1470328576771250">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -69,7 +69,7 @@
         </jpa:attributes>
         <jpa:table name="poblado"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="PermisoPK" abs="false" class="Permiso" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1470328576780255">
+    <jpa:entity xre="false" compositePrimaryKeyClass="PermisoPK" abs="false" class="Permiso" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1470328576780255">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -84,7 +84,7 @@
         </jpa:attributes>
         <jpa:table name="sec_permiso"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="TerceroPK" abs="false" class="Tercero" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1470328576795259">
+    <jpa:entity xre="false" compositePrimaryKeyClass="TerceroPK" abs="false" class="Tercero" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1470328576795259">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -131,7 +131,7 @@
         </jpa:nq>
         <jpa:table name="tercero"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="EmpresaPK" abs="false" class="Empresa" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1470328576816274">
+    <jpa:entity xre="false" compositePrimaryKeyClass="EmpresaPK" abs="false" class="Empresa" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1470328576816274">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -189,7 +189,7 @@
         </jpa:nq>
         <jpa:table name="empresa"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="MunicipioPK" abs="false" class="Municipio" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1470328576824293">
+    <jpa:entity xre="false" compositePrimaryKeyClass="MunicipioPK" abs="false" class="Municipio" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1470328576824293">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -213,7 +213,7 @@
         </jpa:attributes>
         <jpa:table name="municipio"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="RolPK" abs="false" class="Rol" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1470328576831298">
+    <jpa:entity xre="false" compositePrimaryKeyClass="RolPK" abs="false" class="Rol" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1470328576831298">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -230,7 +230,7 @@
         </jpa:attributes>
         <jpa:table name="sec_rol"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="TipoIdentificacionPK" abs="false" class="TipoIdentificacion" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1470328576847309">
+    <jpa:entity xre="false" compositePrimaryKeyClass="TipoIdentificacionPK" abs="false" class="TipoIdentificacion" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1470328576847309">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -258,7 +258,7 @@
         </jpa:nq>
         <jpa:table name="tipo_identificacion"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="EstadoInmueblePK" abs="false" class="EstadoInmueble" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1472591162861">
+    <jpa:entity xre="false" compositePrimaryKeyClass="EstadoInmueblePK" abs="false" class="EstadoInmueble" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1472591162861">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -288,7 +288,14 @@
         <jpa:attributes>
             <jpa:basic attribute-type="String" visibile="true" name="numero" id="_147259144527752">
                 <jpa:bv/>
+                <jpa:column name="inm_numero" unique="false" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
             </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_1472591479472" visibile="true" name="proyecto" id="_147275714644353">
+                <jpa:join-column name="PROYECTO_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_1472591162861" visibile="true" name="estadoInmueble" id="_147277004153728">
+                <jpa:join-column name="ESTADOINMUEBLE_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
             <jpa:id attribute-type="Long" visibile="true" name="id" id="_147259137918650">
                 <jpa:bv/>
                 <jpa:column name="inm_id" unique="true" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
@@ -301,9 +308,15 @@
         <jpa:nq e="false" name="Inmueble.findByNumero">
             <jpa:query>Select i from Inmueble i where i.numero=:numero</jpa:query>
         </jpa:nq>
+        <jpa:nq e="true" name="Inmueble.findByProyecto">
+            <jpa:query>Select i from Inmueble i WHERE i.proyecto.id = :proyecto_id</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Inmueble.findByProyectoAndEstado">
+            <jpa:query>Select i from Inmueble i WHERE i.proyecto.id = :proyecto_id AND i.estadoInmueble.id = :estado_id</jpa:query>
+        </jpa:nq>
         <jpa:table name="inmueble"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="ProyectoPK" abs="false" class="Proyecto" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1472591479472">
+    <jpa:entity xre="false" compositePrimaryKeyClass="ProyectoPK" abs="false" class="Proyecto" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1472591479472">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -333,9 +346,12 @@
         <jpa:nq e="false" name="Proyecto.findByNombre">
             <jpa:query>Select p from Proyecto p where p.nombre=:nombre</jpa:query>
         </jpa:nq>
+        <jpa:nq e="true" name="Proyecto.findByEmpresa">
+            <jpa:query>Select p from Proyecto p WHERE p.empresa.id = :empresa_id</jpa:query>
+        </jpa:nq>
         <jpa:table name="proyecto"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="PlanPagoPK" abs="false" class="PlanPago" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1472591773752">
+    <jpa:entity xre="false" compositePrimaryKeyClass="PlanPagoPK" abs="false" class="PlanPago" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1472591773752">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -382,7 +398,7 @@
         </jpa:nq>
         <jpa:table name="plan_pago"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="OfertaPK" abs="false" class="Oferta" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1472592050688">
+    <jpa:entity xre="false" compositePrimaryKeyClass="OfertaPK" abs="false" class="Oferta" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1472592050688">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -433,7 +449,7 @@
         </jpa:nq>
         <jpa:table name="oferta"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="NegociacionPK" abs="false" class="Negociacion" visibile="true" minimized="false" rootElement="_1470328576751241" id="_1472592325680">
+    <jpa:entity xre="false" compositePrimaryKeyClass="NegociacionPK" abs="false" class="Negociacion" visibile="true" gen="false" minimized="false" rootElement="_1470328576751241" id="_1472592325680">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -473,7 +489,7 @@
                 <Bounds x="1383.0" y="308.0" width="153.0" height="106.0"/>
             </shape>
             <shape elementRef="_1470328576795259">
-                <Bounds x="325.0" y="520.0" width="164.0" height="238.0"/>
+                <Bounds x="307.0" y="560.0" width="164.0" height="238.0"/>
             </shape>
             <shape elementRef="_1470328576816274">
                 <Bounds x="197.0" y="182.0" width="157.0" height="298.0"/>
@@ -491,16 +507,16 @@
                 <Bounds x="1109.0" y="21.0" width="210.0" height="86.0"/>
             </shape>
             <shape elementRef="_1472591379182">
-                <Bounds x="1109.0" y="159.0" width="161.0" height="86.0"/>
+                <Bounds x="765.0" y="0.0" width="161.0" height="138.0"/>
             </shape>
             <shape elementRef="_1472591479472">
                 <Bounds x="531.0" y="57.0" width="159.0" height="158.0"/>
             </shape>
             <shape elementRef="_1472591773752">
-                <Bounds x="708.0" y="288.0" width="163.0" height="178.0"/>
+                <Bounds x="820.0" y="159.0" width="163.0" height="178.0"/>
             </shape>
             <shape elementRef="_1472592050688">
-                <Bounds x="447.0" y="308.0" width="151.0" height="166.0"/>
+                <Bounds x="419.0" y="278.0" width="151.0" height="166.0"/>
             </shape>
             <shape elementRef="_1472592325680">
                 <Bounds x="983.0" y="506.0" width="182.0" height="54.0"/>

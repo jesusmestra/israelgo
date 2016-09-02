@@ -18,243 +18,222 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <dl class="dl-horizontal">
-                                    <dt> <h:outputText  value="Poblado"></h:outputText> </dt>
+                                    <dt> 
+                                        <p:outputLabel for="txtNit" value="Nit"></p:outputLabel>
+                                    </dt>
                                     <dd>
-                                        <h:outputText id="txtPoblado"  value="#{empresaController.seleccionado.poblado.codigo} | #{empresaController.seleccionado.poblado.nombre} "/>
+                                        <h:outputText id="txtNit" value="#{empresaController.seleccionado.nit}"></h:outputText>
                                     </dd>
                                 </dl>
 
                             </div>
                             <div class="col-md-6">
                                 <dl class="dl-horizontal">
-                                    <dt> <h:outputText  value="Poblado"></h:outputText> </dt>
+                                    <dt> 
+                                        <p:outputLabel for="txtNombre" value="Nombre"></p:outputLabel>
+                                    </dt>
                                     <dd>
-                                        <h:outputText id="txtPoblado1"  value="#{empresaController.seleccionado.poblado.codigo} | #{empresaController.seleccionado.poblado.nombre} "/>
+                                        <h:outputText id="txtNombre" value="#{empresaController.seleccionado.nombre}"></h:outputText>
                                     </dd>
                                 </dl>
 
                             </div>
                         </div>
+                        
+                        
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt> 
+                                        <p:outputLabel for="txtRepresentante" value="Representante"></p:outputLabel>
+                                    </dt>
+                                    <dd>
+                                        <h:outputText id="txtRepresentante" value="#{empresaController.seleccionado.representante.identificacion} | #{empresaController.seleccionado.representante.apellido1}, #{empresaController.seleccionado.representante.nombres} "></h:outputText>
+                                    </dd>
+                                </dl>
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt> 
+                                    </dt>
+                                    <dd>
+                                    </dd>
+                                </dl>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt> 
+                                        <p:outputLabel for="txtDireccion" value="Direccion"></p:outputLabel>
+                                    </dt>
+                                    <dd>
+                                        <h:outputText id="txtDireccion" value="#{empresaController.seleccionado.direccion}"></h:outputText>
+                                    </dd>
+                                </dl>
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt> 
+                                        <p:outputLabel for="txtTelefono" value="Telefono"></p:outputLabel>
+                                    </dt>
+                                    <dd>
+                                        <h:outputText id="txtTelefono" value="#{empresaController.seleccionado.telefono}"></h:outputText>
+                                    </dd>
+                                </dl>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt> 
+                                        <p:outputLabel for="txtLogo" value="Logo"></p:outputLabel>
+                                    </dt>
+                                    <dd>
+                                        <h:outputText id="txtLogo" value="#{empresaController.seleccionado.logo}"></h:outputText>
+                                    </dd>
+                                </dl>
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt> 
+                                        <p:outputLabel for="txtEmail" value="Email"></p:outputLabel>
+                                    </dt>
+                                    <dd>
+                                        <h:outputText id="txtEmail" value="#{empresaController.seleccionado.email}"></h:outputText>
+                                    </dd>
+                                </dl>
+
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt> 
+                                        <p:outputLabel for="txtEmailPass" value="Email Pass"></p:outputLabel>
+                                    </dt>
+                                    <dd>
+                                        <h:outputText id="txtEmailPass" value="#{empresaController.seleccionado.emailPass}"></h:outputText>
+                                    </dd>
+                                </dl>
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt> 
+                                        <p:outputLabel for="txtEmailHost" value="Email Host"></p:outputLabel>
+                                    </dt>
+                                    <dd>
+                                        <h:outputText id="txtEmailHost" value="#{empresaController.seleccionado.emailHost}"></h:outputText>
+                                    </dd>
+                                </dl>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt> 
+                                        <p:outputLabel for="txtEmailPort" value="Email Port"></p:outputLabel>
+                                    </dt>
+                                    <dd>
+                                        <h:outputText id="txtEmailPort" value="#{empresaController.seleccionado.emailPort}"></h:outputText>
+                                    </dd>
+                                </dl>
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt> 
+                                    </dt>
+                                    <dd>
+                                    </dd>
+                                </dl>
+
+                            </div>
+                        </div>
+
+
+
                     </div>
                 </div>
 
-                    <p:outputLabel for="txtRepresentante" value="Representante"></p:outputLabel>
-                    <h:outputText id="txtRepresentante" value="#{empresaController.seleccionado.representante.identificacion} | #{empresaController.seleccionado.representante.apellido1}, #{empresaController.seleccionado.representante.nombres} "/>
 
-                    <p:outputLabel for="txtNit" value="Nit"></p:outputLabel>
-                    <p:outputLabel id="txtNit" value="#{empresaController.seleccionado.nit}"></p:outputLabel>
 
-                    <p:outputLabel for="txtNombre" value="Nombre"></p:outputLabel>
-                    <p:outputLabel id="txtNombre" value="#{empresaController.seleccionado.nombre}"></p:outputLabel>
+              <h:form id="frmPrincipal">
 
-                    <p:outputLabel for="txtDireccion" value="Direccion"></p:outputLabel>
-                    <p:outputLabel id="txtDireccion" value="#{empresaController.seleccionado.direccion}"></p:outputLabel>
-
-                    <p:outputLabel for="txtTelefono" value="Telefono"></p:outputLabel>
-                    <p:outputLabel id="txtTelefono" value="#{empresaController.seleccionado.telefono}"></p:outputLabel>
-
-                    <p:outputLabel for="txtLogo" value="Logo"></p:outputLabel>
-                    <p:outputLabel id="txtLogo" value="#{empresaController.seleccionado.logo}"></p:outputLabel>
-
-                    <p:outputLabel for="txtLogoFondoCarta" value="Logo Fondo Carta"></p:outputLabel>
-                    <p:outputLabel id="txtLogoFondoCarta" value="#{empresaController.seleccionado.logoFondoCarta}"></p:outputLabel>
-
-                    <p:outputLabel for="txtLogoUrl" value="Logo Url"></p:outputLabel>
-                    <p:outputLabel id="txtLogoUrl" value="#{empresaController.seleccionado.logoUrl}"></p:outputLabel>
-
-                    <p:outputLabel for="txtArchivoRuta" value="Ruta Archivo"></p:outputLabel>
-                    <p:outputLabel id="txtArchivoRuta" value="#{empresaController.seleccionado.archivoRuta}"></p:outputLabel>
-
-                    <p:outputLabel for="txtEmail" value="Email"></p:outputLabel>
-                    <p:outputLabel id="txtEmail" value="#{empresaController.seleccionado.email}"></p:outputLabel>
-
-                    <p:outputLabel for="txtEmailPass" value="Email Pass"></p:outputLabel>
-                    <p:outputLabel id="txtEmailPass" value="#{empresaController.seleccionado.emailPass}"></p:outputLabel>
-
-                    <p:outputLabel for="txtEmailHost" value="Email Host"></p:outputLabel>
-                    <p:outputLabel id="txtEmailHost" value="#{empresaController.seleccionado.emailHost}"></p:outputLabel>
-
-                    <p:outputLabel for="txtEmailPort" value="Email Port"></p:outputLabel>
-                    <p:outputLabel id="txtEmailPort" value="#{empresaController.seleccionado.emailPort}"></p:outputLabel>
-
-                    <p:outputLabel for="txtRadicadoEntrada" value="Radicado Entrada"></p:outputLabel>
-                    <p:outputLabel id="txtRadicadoEntrada" value="#{empresaController.seleccionado.radicadoEntrada}"></p:outputLabel>
-
-                    <p:outputLabel for="txtRadicadoSalida" value="Radicado Salida"></p:outputLabel>
-                    <p:outputLabel id="txtRadicadoSalida" value="#{empresaController.seleccionado.radicadoSalida}"></p:outputLabel>
-
-                    <p:outputLabel for="txtRadicadoInterno" value="Radicado Interno"></p:outputLabel>
-                    <p:outputLabel id="txtRadicadoInterno" value="#{empresaController.seleccionado.radicadoInterno}"></p:outputLabel>
-
-                    <h:form id="frmPrincipal">
-
-                        <h4>Cargos </h4>
+                        <h4>Proyectos </h4>
                         <p:commandButton icon="ui-icon-plusthick" value="Nuevo" 
-                                         oncomplete="PF('wDialogoNuevoCargo').show();"                
-                                         actionListener="#{empresaController.crearCargo()}"
-                                         update=":frmDialogoNuevoCargo"
+                                         oncomplete="PF('wDialogoNuevoProyecto').show();"                
+                                         actionListener="#{empresaController.crearProyecto()}"
+                                         update=":frmDialogoNuevoProyecto"
                                          />
 
 
-                        <p:dataTable id="listaCargos" emptyMessage="No hay resultados a mostrar" value="#{empresaController.cargoList}" var="car">
-                            <p:column headerText="Codigo" filterBy="#{car.codigo}" filterMatchMode="contains">
-                                <f:facet name="header">
-                                    <h:outputText value="codigo" />
-                                </f:facet>
-                                <h:outputText value="#{car.codigo}" />
-                            </p:column>
-                            <p:column headerText="Descripcion" filterBy="#{car.descripcion}" filterMatchMode="contains">
-                                <f:facet name="header">
-                                    <h:outputText value="descrpcion" />
-                                </f:facet>
-                                <h:outputText value="#{car.descripcion }" />
-                            </p:column>
-
-                            <p:column headerText="Editar">
-                                <p:commandLink value="Editar" oncomplete="PF('wDialogoNuevoCargo').show();" actionListener="#{empresaController.seleccionarCargo(car)}"
-                                               update=":frmDialogoNuevoCargo" />
-                            </p:column>
-
-                        </p:dataTable>
-
-
-
-                        <h4>Centros Costo </h4>
-                        <p:commandButton icon="ui-icon-plusthick" value="Nuevo" 
-                                         oncomplete="PF('wDialogoNuevaDependencia').show();"                
-                                         actionListener="#{empresaController.crearCentroCosto()}"
-                                         update=":frmDialogoNuevaDependencia"
-                                         />
-
-
-                        <p:dataTable id="listaDependencias" emptyMessage="No hay resultados a mostrar" value="#{empresaController.centroCostoList}" var="depen">
-                            <p:column headerText="Codigo" filterBy="#{depen.codigo}" filterMatchMode="contains">
-                                <f:facet name="header">
-                                    <h:outputText value="codigo" />
-                                </f:facet>
-                                <h:outputText value="#{depen.codigo}" />
-                            </p:column>
-                            <p:column headerText="Nombre" filterBy="#{depen.nombre}" filterMatchMode="contains">
+                        <p:dataTable id="listaProyectos" emptyMessage="No hay resultados a mostrar" value="#{empresaController.proyectoList }" var="proy">
+                            <p:column headerText="Nombre" filterBy="#{proy.nombre}" filterMatchMode="contains">
                                 <f:facet name="header">
                                     <h:outputText value="nombre" />
                                 </f:facet>
-                                <h:outputText value="#{depen.nombre }" />
-                            </p:column>
-                            <p:column headerText="Jefe" filterBy="#{depen.jefe.nombres}" filterMatchMode="contains">
-                                <f:facet name="header">
-                                    <h:outputText value="jefe" />
-                                </f:facet>
-                                <h:outputText value="#{depen.jefe.apellido1}, #{depen.jefe.nombres}"/>
-                            </p:column>
-                            <p:column headerText="Consecutivo Int">
-                                <f:facet name="header">
-                                    <h:outputText value="consecutivoInterno" />
-                                </f:facet>
-                                <h:outputText value="#{depen.consecutivoInterno}" />
-                            </p:column>
-                            <p:column headerText="Consecutivo Ext">
-                                <f:facet name="header">
-                                    <h:outputText value="consecutivoExterno" />
-                                </f:facet>
-                                <h:outputText value="#{depen.consecutivoExterno}" />
+                                <h:outputText value="#{proy.nombre}" />
                             </p:column>
 
                             <p:column headerText="Editar">
-                                <p:commandLink value="Editar" oncomplete="PF('wDialogoNuevaDependencia').show();" actionListener="#{empresaController.seleccionarCentroCosto(depen)}"
-                                               update=":frmDialogoNuevaDependencia" />
+                                <p:commandLink value="Editar" oncomplete="PF('wDialogoNuevoProyecto').show();" actionListener="#{empresaController.seleccionarProyecto(proy) }"
+                                               update=":frmDialogoNuevoProyecto" />
                             </p:column>
 
-                        </p:dataTable>                    
+                        </p:dataTable>
+                     
+
+                    </h:form>   
 
 
-                    </h:form>    
 
-
-                    <p:dialog id="dialogoNuevoCargo" appendTo="@(body)" widgetVar="wDialogoNuevoCargo" header="Nuevo cargo" modal="true" 
+                 <p:dialog id="dialogoNuevoProyecto" appendTo="@(body)" widgetVar="wDialogoNuevoProyecto" header="Nuevo Proyecto" modal="true" 
                               resizable="false" closeOnEscape="true" draggable="false">
-                        <h:form id="frmDialogoNuevoCargo">
+                        <h:form id="frmDialogoNuevoProyecto">
                             <h:panelGrid columns="2">
-                                <p:outputLabel for="txtNumeroCargo" value="Codigo"/>
-                                <p:inputMask id="txtNumeroCargo" mask="999" required="true"  
-                                             value="#{empresaController.cargoInstance.codigo}"/>
-                                <p:outputLabel for="txtDescripcionCargo" value="Descripcion"/>
-                                <p:inputText id="txtDescripcionCargo"  required="true"  
-                                             value="#{empresaController.cargoInstance.descripcion}"/>
-
-
-
-                                <p:commandButton value="#{empresaController.accion}" icon="ui-icon-check" update=":frmPrincipal:listaCargos" 
-                                                 actionListener="#{empresaController.registraCargo()}" oncomplete="PF('wDialogoNuevoCargo').hide();" 
+                                <p:outputLabel for="txtNombre" value="Nombre"/>
+                                <p:inputText id="txtNombre"  required="true"  
+                                             value="#{empresaController.proyectoInstance.nombre }"/>
+                                
+                                 <p:commandButton value="#{empresaController.accion}" icon="ui-icon-check" update=":frmPrincipal:listaProyectos" 
+                                                  actionListener="#{empresaController.registraProyecto()}" oncomplete="PF('wDialogoNuevoProyecto').hide();" 
                                                  rendered="#{empresaController.accion == 'Grabar'}"
                                                  />
-
-                                <p:commandButton value="#{empresaController.accion}" icon="ui-icon-refresh" update=":frmPrincipal:listaCargos" 
-                                                 actionListener="#{empresaController.registraCargo()}" oncomplete="PF('wDialogoNuevoCargo').hide();" 
+                                 
+                                  <p:commandButton value="#{empresaController.accion}" icon="ui-icon-refresh" update=":frmPrincipal:listaProyectos" 
+                                                   actionListener="#{empresaController.registraProyecto() }" oncomplete="PF('wDialogoNuevoProyecto').hide();" 
                                                  rendered="#{empresaController.accion == 'Actualizar'}"
                                                  />
-                                <p:commandButton value="Eliminar" icon="ui-icon-refresh" update=":frmPrincipal:listaCargos" 
-                                                 actionListener="#{empresaController.eliminarCargo()}" oncomplete="PF('wDialogoNuevoCargo').hide();" 
+                                
+                                  <p:commandButton value="Eliminar" icon="ui-icon-refresh" update=":frmPrincipal:listaProyectos" 
+                                                   actionListener="#{empresaController.eliminarProyecto() }" oncomplete="PF('wDialogoNuevoProyecto').hide();" 
 
                                                  />
-                                <p:commandButton value="Cancelar" icon="ui-icon-close" oncomplete="PF('wDialogoNuevoCargo').hide();"/>
+                                <p:commandButton value="Cancelar" icon="ui-icon-close" oncomplete="PF('wDialogoNuevoProyecto').hide();"/>
+                                 
+                                 
                             </h:panelGrid>
                         </h:form>
 
                     </p:dialog>
-
-
-
-                    <p:dialog id="dialogoNuevaDependencia" appendTo="@(body)" widgetVar="wDialogoNuevaDependencia" header="Nueva Dependencia" modal="true" 
-                              resizable="false" closeOnEscape="true" draggable="false">
-                        <h:form id="frmDialogoNuevaDependencia">
-                            <h:panelGrid columns="2">
-                                <p:outputLabel for="txtCodigoDependencia" value="Codigo"/>
-                                <p:inputMask id="txtCodigoDependencia" mask="999" required="true"  
-                                             value="#{empresaController.centroCostoInstance.codigo}"/>
-
-                                <p:outputLabel for="txtNombreDependencia" value="Nombre"/>
-                                <p:inputText id="txtNombreDependencia" required="true"  
-                                             value="#{empresaController.centroCostoInstance.nombre}"/>
-
-
-                                <p:outputLabel for="txtJefeDependencia" value="Jefe"></p:outputLabel>
-                                <p:selectOneMenu  id="txtJefeDependencia" filter="true" filterMatchMode="contains" value="#{empresaController.jefeId}">
-
-                                    <f:selectItems value="#{empresaController.jefeList}" var="persona"
-                                                   itemLabel="#{persona.apellido1}, #{persona.nombres}" itemValue="#{persona.id}"/>
-
-                                </p:selectOneMenu>
-
-
-
-                                <p:outputLabel for="txtConsecutivoInterno" value="Consecutivo Interno"/>
-                                <p:inputText type="number"  id="txtConsecutivoInterno"  required="true"  
-                                             value="#{empresaController.centroCostoInstance.consecutivoInterno}"/>
-
-
-                                <p:outputLabel for="txtConsecutivoExterno" value="Consecutivo Externo"/>
-                                <p:inputText type="number"  id="txtConsecutivoExterno"  required="true"  
-                                             value="#{empresaController.centroCostoInstance.consecutivoExterno}"/>
-
-                                <p:commandButton value="#{empresaController.accion}" icon="ui-icon-check" update=":frmPrincipal:listaDependencias" 
-                                                 actionListener="#{empresaController.registraCentroCosto()}" oncomplete="PF('wDialogoNuevaDependencia').hide();" 
-                                                 rendered="#{empresaController.accion == 'Grabar'}"
-                                                 />
-
-                                <p:commandButton value="#{empresaController.accion}" icon="ui-icon-refresh" update=":frmPrincipal:listaDependencias" 
-                                                 actionListener="#{empresaController.registraCentroCosto()}" oncomplete="PF('wDialogoNuevaDependencia').hide();" 
-                                                 rendered="#{empresaController.accion == 'Actualizar'}"
-                                                 />
-                                <p:commandButton value="Eliminar" icon="ui-icon-refresh" update=":frmPrincipal:listaDependencias" 
-                                                 actionListener="#{empresaController.eliminarCentroCosto()}" oncomplete="PF('wDialogoNuevaDependencia').hide();" 
-
-                                                 />
-                                <p:commandButton value="Cancelar" icon="ui-icon-close" oncomplete="PF('wDialogoNuevoCargo').hide();"/>
-                            </h:panelGrid>
-                        </h:form>
-
-                    </p:dialog>                
-
 
 
             </ui:define>

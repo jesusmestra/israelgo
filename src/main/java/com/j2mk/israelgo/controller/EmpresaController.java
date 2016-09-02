@@ -14,8 +14,9 @@ import com.j2mk.israelgo.business.DepartamentoFacade;
 import com.j2mk.israelgo.business.EmpresaFacade;
 import com.j2mk.israelgo.business.MunicipioFacade;
 import com.j2mk.israelgo.business.PobladoFacade;
+import com.j2mk.israelgo.business.ProyectoFacade;
 import com.j2mk.israelgo.business.TerceroFacade;
-import java.io.BufferedReader;
+import com.j2mk.israelgo.model.Proyecto;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
@@ -43,6 +44,9 @@ public class EmpresaController implements Serializable {
     @Inject
     private PobladoFacade pobladoFacade;
     
+    @Inject
+    private ProyectoFacade proyectoFacade;
+
     private Empresa seleccionado = new Empresa();
 
     private Long representanteId;
@@ -66,9 +70,12 @@ public class EmpresaController implements Serializable {
     private List<Tercero> jefeList;
 
     private String accion;
+    
+    private Proyecto proyectoInstance;
 
-    private BufferedReader reader;
+    private List<Proyecto> proyectoList;
 
+    
     public EmpresaController() {
     }
 
@@ -288,6 +295,7 @@ public class EmpresaController implements Serializable {
         try {
             //cargoList = empresaFacade.buscarCargos(this.seleccionado.getId());
             //centroCostoList = empresaFacade.buscarCentroCostos(this.seleccionado.getId());
+            proyectoList = empresaFacade.buscarProyectos(this.seleccionado.getId());
         } catch (Exception e) {
             throw e;
         }
@@ -296,5 +304,63 @@ public class EmpresaController implements Serializable {
 
     }
 
+    public Proyecto getProyectoInstance() {
+        return proyectoInstance;
+    }
 
+    public void setProyectoInstance(Proyecto proyectoInstance) {
+        this.proyectoInstance = proyectoInstance;
+    }
+
+    public List<Proyecto> getProyectoList() {
+        return proyectoList;
+    }
+
+    public void setProyectoList(List<Proyecto> proyectoList) {
+        this.proyectoList = proyectoList;
+    }
+
+    public void registraProyecto() throws Exception {
+        try {
+            proyectoInstance.setEmpresa(seleccionado);
+
+            if (accion.equals("Grabar")) {
+                proyectoFacade.create(proyectoInstance);
+            } else if (accion.equals("Actualizar")) {
+                proyectoFacade.edit(proyectoInstance);
+            }
+
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            proyectoList = empresaFacade.buscarProyectos(seleccionado.getId());
+        }
+
+    }
+    
+    
+    public void crearProyecto() {
+        this.accion = "Grabar";
+        this.proyectoInstance = new Proyecto();
+    }
+
+    public void seleccionarProyecto(Proyecto pro) {
+        this.accion = "Actualizar";
+        this.proyectoInstance = pro;
+    }
+
+    public void eliminarProyecto() {
+        try {
+            proyectoFacade.remove(proyectoInstance);
+            proyectoList = empresaFacade.buscarProyectos(this.seleccionado.getId());
+
+        } catch (Exception e) {
+
+        } finally {
+
+        }
+    }
+    
+    
+    
 }

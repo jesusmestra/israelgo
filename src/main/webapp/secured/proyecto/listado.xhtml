@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="/plantilla.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <p:commandButton action="#{proyectoController.crear}" value="Nuevo" />
+                    
+                    <p:selectOneMenu  id="selectEmpresa" filter="true" filterMatchMode="contains" value="#{proyectoController.empresaId}">
+                        
+                        <p:ajax listener="#{proyectoController.actualizarProyectoPorEmpresa()}" update="tablaProyectos"  />
+                        <f:selectItems  value="#{proyectoController.empresas}" var="emp"
+                                        itemLabel="#{emp.nombre}" itemValue="#{emp.id}"/>
+                    </p:selectOneMenu>
+                    <p:dataTable var="proyectoInstance" value="#{proyectoController.proyectos}" id="tablaProyectos">
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Empresa" />
+                        </f:facet>
+                        <h:outputText value="#{proyectoInstance.empresa.nombre}" />
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nombre" />
+                        </f:facet>
+                        <h:outputText value="#{proyectoInstance.nombre}" />
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Oferta" />
+                        </f:facet>
+                        <h:outputText value="#{proyectoInstance.oferta.nombre}" />
+                    </p:column>
+
+                        <p:column>
+                        <h:panelGroup class="action" >
+                            <h:commandLink action="#{proyectoController.mostrar(proyectoInstance)}" value="Mostrar"/>
+                            <br/>                            
+                            <h:commandLink action="#{proyectoController.editar(proyectoInstance)}" value="Editar"/>
+                            
+                            
+			</h:panelGroup>
+                       
+                    </p:column>            
+                        
+                </p:dataTable>
+              </h:form>    
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

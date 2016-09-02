@@ -10,6 +10,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -17,6 +21,9 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "inmueble")
+@NamedQueries({
+    @NamedQuery(name = "Inmueble.findByProyecto", query = "Select i from Inmueble i WHERE i.proyecto.id = :proyecto_id"),
+    @NamedQuery(name = "Inmueble.findByProyectoAndEstado", query = "Select i from Inmueble i WHERE i.proyecto.id = :proyecto_id AND i.estadoInmueble.id = :estado_id")})
 public class Inmueble implements Serializable {
 
     @Column(name = "inm_id", unique = true)
@@ -24,8 +31,17 @@ public class Inmueble implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "inm_numero")
     @Basic
     private String numero;
+
+    @ManyToOne(targetEntity = Proyecto.class)
+    @JoinColumn(name = "PROYECTO_ID")
+    private Proyecto proyecto;
+
+    @ManyToOne(targetEntity = EstadoInmueble.class)
+    @JoinColumn(name = "ESTADOINMUEBLE_ID")
+    private EstadoInmueble estadoInmueble;
 
     public Long getId() {
         return this.id;
@@ -41,6 +57,22 @@ public class Inmueble implements Serializable {
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+
+    public Proyecto getProyecto() {
+        return this.proyecto;
+    }
+
+    public void setProyecto(Proyecto proyecto) {
+        this.proyecto = proyecto;
+    }
+
+    public EstadoInmueble getEstadoInmueble() {
+        return this.estadoInmueble;
+    }
+
+    public void setEstadoInmueble(EstadoInmueble estadoInmueble) {
+        this.estadoInmueble = estadoInmueble;
     }
 
 }

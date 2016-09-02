@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="/plantilla.xhtml">
+
+            <ui:define name="content">
+                
+                 <h3>Editar oferta</h3>
+                
+                <h:form>
+                    <p:messages id="mensaje" autoUpdate="false" severity="info, fatal" showSummary="false" showDetail="true"/>
+                    <h:panelGrid columns="2">
+                        
+                        
+                        <p:outputLabel for="txtNombre" value="Nombre"></p:outputLabel>
+                        <p:inputText id="txtNombre" value="#{ofertaController.seleccionado.nombre}"></p:inputText>
+
+                        <p:outputLabel for="txtPorcentaje" value="Porcentaje"></p:outputLabel>
+                        <p:inputText id="txtPorcentaje" value="#{ofertaController.seleccionado.porcentaje}"></p:inputText>
+
+                        <p:outputLabel for="txtNumeroCuotas" value="Numero cuotas"></p:outputLabel>
+                        <p:inputText id="txtNumeroCuotas" value="#{ofertaController.seleccionado.numeroCuotas}"></p:inputText>
+
+                        <p:outputLabel for="txtPeriodicidad" value="Periodicidad"></p:outputLabel>
+                        <p:inputText id="txtPeriodicidad" value="#{ofertaController.seleccionado.periodicidad}"></p:inputText>
+
+                        <p:outputLabel for="txtValorSeparacion" value="Valor separacion"></p:outputLabel>
+                        <p:inputText id="txtValorSeparacion" value="#{ofertaController.seleccionado.valorSeparacion}">
+                        <f:convertNumber currencySymbol="$" groupingUsed="true"
+                                maxFractionDigits="2" type="currency" />
+                        </p:inputText>
+
+                        <p:column/>
+                        <p:commandButton icon="ui-icon-check" value="Grabar" actionListener="#{ofertaController.actualizar}"
+                                         update="mensaje" action="editar"
+                                         />
+                         
+                    </h:panelGrid>
+                </h:form>    
+                 </ui:define>
+        </ui:composition>     
+    </body>
+</html>

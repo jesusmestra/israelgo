@@ -3,11 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
-        <ui:composition template="./../plantilla.xhtml">
+        <ui:composition template="/plantilla.xhtml">
 
             <ui:define name="content">
                 
@@ -17,14 +18,21 @@
                     <p:messages id="mensaje" autoUpdate="false" severity="info, fatal" showSummary="false" showDetail="true"/>
                     <h:panelGrid columns="2">
                         
-                        <p:outputLabel for="txtCodigo" value="Codigo"></p:outputLabel>
-                        <p:inputText id="txtCodigo" value="#{cargoController.seleccionado.codigo}"></p:inputText>
                         
-                        <p:outputLabel for="txtDescripcion" value="Descripcion"></p:outputLabel>
-                        <p:inputText id="txtDescripcion" value="#{cargoController.seleccionado.descripcion}"></p:inputText>
+                        <p:outputLabel for="txtEmpresa" value="Empresa"></p:outputLabel>
+                        
+                        <p:selectOneMenu  id="txtEmpresa" filter="true" filterMatchMode="contains" value="#{proyectoController.empresaId}">
+
+                            <f:selectItems value="#{proyectoController.empresas}" var="empresa"
+                                           itemLabel="#{empresa.nit} | #{empresa.nombre}" itemValue="#{empresa.id}"/>
+                        </p:selectOneMenu>
+
+
+                        <p:outputLabel for="txtNombre" value="Nombre"></p:outputLabel>
+                        <p:inputText id="txtNombre" value="#{proyectoController.seleccionado.nombre}"></p:inputText>
 
                         <p:column/>
-                        <p:commandButton icon="ui-icon-check" value="Grabar" actionListener="#{cargoController.grabar}"
+                        <p:commandButton icon="ui-icon-check" value="Grabar" actionListener="#{proyectoController.actualizar}"
                                          update="mensaje" action="editar"
                                          />
                          
