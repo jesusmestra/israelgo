@@ -35,6 +35,26 @@ public class Inmueble implements Serializable {
     @Basic
     private String numero;
 
+    @Column(name = "inm_area")
+    @Basic
+    private Double area;
+
+    @Column(name = "inm_valor_metro_cuadrado")
+    @Basic
+    private Double valorMetroCuadrado;
+
+    @Column(name = "inm_incremento")
+    @Basic
+    private Double incremento;
+
+    @Column(name = "inm_valor_separacion")
+    @Basic
+    private Double valorSeparacion;
+
+    @Column(name = "inm_valor_total")
+    @Basic
+    private Double valorTotal;
+
     @ManyToOne(targetEntity = Proyecto.class)
     @JoinColumn(name = "PROYECTO_ID")
     private Proyecto proyecto;
@@ -57,6 +77,46 @@ public class Inmueble implements Serializable {
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+
+    public Double getArea() {
+        return this.area;
+    }
+
+    public void setArea(Double area) {
+        this.area = area;
+    }
+
+    public Double getValorMetroCuadrado() {
+        return this.valorMetroCuadrado;
+    }
+
+    public void setValorMetroCuadrado(Double valorMetroCuadrado) {
+        this.valorMetroCuadrado = valorMetroCuadrado;
+    }
+
+    public Double getIncremento() {
+        return this.incremento;
+    }
+
+    public void setIncremento(Double incremento) {
+        this.incremento = incremento;
+    }
+
+    public Double getValorSeparacion() {
+        return this.valorSeparacion;
+    }
+
+    public void setValorSeparacion(Double valorSeparacion) {
+        this.valorSeparacion = valorSeparacion;
+    }
+
+    public Double getValorTotal() {
+        return this.valorTotal;
+    }
+
+    public void setValorTotal(Double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
     public Proyecto getProyecto() {

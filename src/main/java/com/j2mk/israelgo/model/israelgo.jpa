@@ -290,6 +290,26 @@
                 <jpa:bv/>
                 <jpa:column name="inm_numero" unique="false" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
             </jpa:basic>
+            <jpa:basic attribute-type="Double" visibile="true" name="area" id="_147311260559529">
+                <jpa:bv/>
+                <jpa:column name="inm_area" unique="false" nullable="true" insertable="true" updatable="true" length="255"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Double" visibile="true" name="valorMetroCuadrado" id="_147311261064230">
+                <jpa:bv/>
+                <jpa:column name="inm_valor_metro_cuadrado" unique="false" nullable="true" insertable="true" updatable="true" length="255"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Double" visibile="true" name="incremento" id="_147311262359431">
+                <jpa:bv/>
+                <jpa:column name="inm_incremento" unique="false" nullable="true" insertable="true" updatable="true" length="255"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Double" visibile="true" name="valorSeparacion" id="_147311264117732">
+                <jpa:bv/>
+                <jpa:column name="inm_valor_separacion" unique="false" nullable="true" insertable="true" updatable="true" length="255"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Double" visibile="true" name="valorTotal" id="_147311265138633">
+                <jpa:bv/>
+                <jpa:column name="inm_valor_total" unique="false" nullable="true" insertable="true" updatable="true" length="255"/>
+            </jpa:basic>
             <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_1472591479472" visibile="true" name="proyecto" id="_147275714644353">
                 <jpa:join-column name="PROYECTO_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
             </jpa:many-to-one>
@@ -313,6 +333,24 @@
         </jpa:nq>
         <jpa:nq e="true" name="Inmueble.findByProyectoAndEstado">
             <jpa:query>Select i from Inmueble i WHERE i.proyecto.id = :proyecto_id AND i.estadoInmueble.id = :estado_id</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Inmueble.findByArea">
+            <jpa:query>Select i from Inmueble i where i.area=:area</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Inmueble.findByValorMetroCuadrado">
+            <jpa:query>Select i from Inmueble i where i.valorMetroCuadrado=:valorMetroCuadrado</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Inmueble.findByIncremento">
+            <jpa:query>Select i from Inmueble i where i.incremento=:incremento</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Inmueble.findByValorSeparacion">
+            <jpa:query>Select i from Inmueble i where i.valorSeparacion=:valorSeparacion</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Inmueble.findByValorTotal">
+            <jpa:query>Select i from Inmueble i where i.valorTotal=:valorTotal</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Inmueble.findByAttribute">
+            <jpa:query>Select i from Inmueble i where i.attribute=:attribute</jpa:query>
         </jpa:nq>
         <jpa:table name="inmueble"/>
     </jpa:entity>
@@ -507,13 +545,13 @@
                 <Bounds x="1109.0" y="21.0" width="210.0" height="86.0"/>
             </shape>
             <shape elementRef="_1472591379182">
-                <Bounds x="765.0" y="0.0" width="161.0" height="138.0"/>
+                <Bounds x="765.0" y="0.0" width="177.0" height="238.0"/>
             </shape>
             <shape elementRef="_1472591479472">
                 <Bounds x="531.0" y="57.0" width="159.0" height="158.0"/>
             </shape>
             <shape elementRef="_1472591773752">
-                <Bounds x="820.0" y="159.0" width="163.0" height="178.0"/>
+                <Bounds x="794.0" y="288.0" width="163.0" height="178.0"/>
             </shape>
             <shape elementRef="_1472592050688">
                 <Bounds x="419.0" y="278.0" width="151.0" height="166.0"/>
