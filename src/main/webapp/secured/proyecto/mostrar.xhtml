@@ -83,20 +83,67 @@
 
 
                         <p:dialog id="dialogoNuevoInmueble" appendTo="@(body)" widgetVar="wDialogoNuevoInmueble" header="Nuevo Inmueble" modal="true" 
-                                  resizable="false" closeOnEscape="true" draggable="false">
+                                  resizable="true" closeOnEscape="true" draggable="false">
                             <h:form id="frmDialogoNuevoInmueble">
                                 <h:panelGrid columns="2">
                                     <p:outputLabel for="txtNumero" value="Numero"/>
                                     <p:inputText id="txtNumero"  required="true"  
                                                  value="#{proyectoController.inmuebleInstance.numero}"/>
 
+
                                     <p:outputLabel for="txtEstadoInmueble" value="Estado inmueble"/>
                                     <p:selectOneMenu  id="txtEstadoInmueble" 
                                                       value="#{proyectoController.estadoInmuebleId}">
-                                        <f:selectItem itemLabel="Seleccione" itemValue="" noSelectionOption="true"/>
+                                        <f:selectItem itemLabel="Select One" itemValue="" />
                                         <f:selectItems  value="#{proyectoController.estadoInmuebleList}" var="est"
                                                         itemLabel="#{est.nombre}" itemValue="#{est.id}"/>
                                     </p:selectOneMenu>
+                                    
+                                    
+                                    <p:outputLabel for="txtValorMetroCuadrado" value="Valor Metro Cuadrado"/>
+                                    <p:inputText id="txtValorMetroCuadrado"  required="true"  
+                                                 value="#{proyectoController.inmuebleInstance.valorMetroCuadrado}">
+                                        <f:convertNumber currencySymbol="$" groupingUsed="true"
+                                maxFractionDigits="2" type="currency" />
+                                    </p:inputText>
+                                    
+ <p:outputLabel for="txtArea" value="Area"/>
+                                    <p:inputText id="txtArea"  required="true"  
+                                                 value="#{proyectoController.inmuebleInstance.area}">
+                                        <f:convertNumber currencySymbol="" groupingUsed="true"
+                                maxFractionDigits="2" type="currency" />
+                                    </p:inputText>
+
+                                    <p:outputLabel for="txtIncremento" value="Incremento"/>
+                                    <p:inputText id="txtIncremento"  required="true"  
+                                                 value="#{proyectoController.inmuebleInstance.incremento}">
+                                        <f:convertNumber currencySymbol="$" groupingUsed="true"
+                                maxFractionDigits="2" type="currency" />
+                                    </p:inputText>
+
+                                    
+                                    
+                                    <p:outputLabel for="txtValorSeparacion" value="Valor Separacion"/>
+                                    <p:inputText id="txtValorSeparacion"  required="true"  
+                                                 value="#{proyectoController.inmuebleInstance.valorSeparacion}">
+                                        <f:convertNumber currencySymbol="$" groupingUsed="true"
+                                maxFractionDigits="2" type="currency" />
+                                    </p:inputText>
+
+
+
+                                    <p:outputLabel for="txtValorTotal" value="Valor Total"/>
+                                    <p:inputText id="txtValorTotal"  required="true"  
+                                                 value="#{proyectoController.inmuebleInstance.valorTotal}">
+                                        <f:convertNumber currencySymbol="$" groupingUsed="true"
+                                maxFractionDigits="2" type="currency" />
+                                    </p:inputText>
+
+
+
+
+                                    
+                                    
 
                                     <p:commandButton value="#{proyectoController.accion}" icon="ui-icon-check" update=":frmPrincipal:listaInmuebles" 
                                                      actionListener="#{proyectoController.registraInmueble()}" 
